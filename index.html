@@ -14,7 +14,7 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="reveal">
@@ -308,7 +308,7 @@
                         </a>
                     </section>
                     <section>
-                        <h3 class="subtitle">IPC</h3>
+                        <h1 class="subtitle">IPC</h1>
                         <h2>O que é RPC?</h2>
                         <blockquote class="smaller">
                             Remote Procedure Call (RPC) é uma tecnologia de comunicação entre processos que permite a um
@@ -321,7 +321,7 @@
                         </a>
                     </section>
                     <section data-auto-animate>
-                        <h3 class="subtitle">IPC</h3>
+                        <h1 class="subtitle">IPC</h1>
                         <h2>O que é gRPC?</h2>
                         <p>
                             Framework RPC de alta performance implementado em HTTP/2 que pode rodar em qualquer ambiente
@@ -338,7 +338,7 @@
                         <a href="https://grpc.io/" class="smallest fragment" target="_blank" rel="noopener">grpc.io</a>
                     </section>
                     <section data-auto-animate>
-                        <h3 class="subtitle">IPC</h3>
+                        <h1 class="subtitle">IPC</h1>
                         <h2>O que é gRPC?</h2>
                         <figure>
                             <img src="https://grpc.io/img/landing-2.svg" alt="gRPC">
@@ -1254,6 +1254,12 @@
                 history: true,
                 mouseWheel: true,
                 plugins: [RevealHighlight]
+            });
+            Reveal.configure({
+                keyboard: {
+                    38: 'prev',
+                    40: 'next'
+                }
             });
         </script>
     </body>
