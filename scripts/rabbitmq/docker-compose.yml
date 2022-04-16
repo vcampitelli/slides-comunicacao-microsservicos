@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  subscriber:
+    tty: true
+    build:
+      context: ./subscriber
+    volumes:
+      - ./subscriber:/app
+    env_file:
+      - .env
+    depends_on:
+      - rabbitmq
+    command: "sh -c './wait-for rabbitmq:${APP_RABBITMQ_PORT} -- python app.py'"
+
+  publisher:
+    build:
+      context: ./publisher
+    volumes:
+      - ./publisher:/app
+    env_file:
+      - .env
+    depends_on:
+      - rabbitmq
+    command: "sh -c './wait-for rabbitmq:${APP_RABBITMQ_PORT} -- tail -f /dev/null'"
+
+  rabbitmq:
+    image: rabbitmq:3-alpine
+    env_file:
+      - rabbitmq.env
